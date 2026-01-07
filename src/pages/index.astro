@@ -1,11 +1,234 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import RevealOnScroll from '../components/RevealOnScroll';
+import PhilosophyCard from '../components/PhilosophyCard';
+import ExpertiseItem from '../components/ExpertiseItem';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout>
+  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden bg-background-dark">
+    <Header client:load />
+    <main class="flex-grow flex flex-col">
+      <div class="flex flex-col bg-background-dark">
+
+        <!-- ================= HERO SECTION ================= -->
+        <section class="relative h-screen min-h-[700px] flex items-center justify-center bg-background-dark pt-20 z-10">
+          <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-background-dark/60 z-10"></div>
+            <img
+              alt="Hall d'entrée d'entreprise de luxe"
+              class="w-full h-full object-cover"
+              src="/images/HomepageBackgroundPraesioLobby.webp"
+            />
+          </div>
+
+          <!-- Seamless Transition Gradient: Fades to background-dark (#020617) -->
+          <div class="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-b from-transparent via-background-dark/60 to-background-dark z-10 pointer-events-none"></div>
+
+          <div class="relative z-20 container mx-auto px-6 text-center max-w-5xl py-16">
+            <RevealOnScroll client:visible>
+              <div class="flex flex-col gap-6 items-center">
+                <span class="text-primary text-sm font-light tracking-[0.2em] uppercase mb-2 font-body border-b border-primary pb-3">Ultra Facility Management</span>
+                <h1 class="text-text-main text-h1 font-serif leading-tight tracking-tight">
+                  L'Alliance de l'Hospitalité et de la Technologie
+                </h1>
+                <p class="text-text-main text-body font-light max-w-3xl leading-relaxed font-body">
+                  La rencontre de l'hospitalité 5 étoiles et de la technologie prédictive. Nous orchestrons votre environnement de travail avec une élégance invisible et une anticipation absolue.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-8 justify-center">
+                  <a href="/contact" class="min-w-[200px] flex items-center justify-center h-14 px-10 bg-primary text-background-dark text-base font-light tracking-wide hover:bg-white transition-colors duration-300 font-body rounded-none">
+                    Contactez-nous
+                  </a>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+
+          <!-- Scroll Indicator -->
+          <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-fade-in z-30">
+            <div class="flex flex-col items-center gap-4 text-primary animate-float">
+              <span class="text-xs uppercase tracking-widest font-body font-light">Défiler</span>
+              <div class="h-12 w-px bg-gradient-to-b from-primary to-transparent"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= VISION SECTION ================= -->
+        <section id="vision" class="relative py-32 bg-background-dark z-20">
+          <!-- Ambient Glow for Depth -->
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-3/4 bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
+
+          <div class="container mx-auto px-6 relative z-10">
+            <RevealOnScroll client:visible>
+              <div class="flex flex-col items-center mb-24 text-center">
+                <h2 class="text-text-main text-h2 font-serif  mb-6">Un Environnement d'Exception</h2>
+                <p class="text-text-body text-body font-light max-w-2xl leading-relaxed font-body">
+                  Nous transformons le lieu de travail en un espace où la performance s'allie à l'émotion. Une expérience inspirée des plus grands hôtels, appliquée avec rigueur à l'entreprise.
+                </p>
+              </div>
+            </RevealOnScroll>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1400px] mx-auto">
+              <RevealOnScroll client:visible delay={0} className="h-full">
+                <PhilosophyCard
+                  icon="diversity_1"
+                  title="L'Expertise Humaine"
+                  description="Les codes de l'hôtellerie de luxe appliqués à l'entreprise : attention au détail, discrétion absolue et excellence relationnelle."
+                />
+              </RevealOnScroll>
+              <RevealOnScroll client:visible delay={200} className="h-full">
+                <PhilosophyCard
+                  icon="hub"
+                  title="Intelligence Prédictive"
+                  description="Une technologie générative et des solutions digitales intuitives qui anticipent les besoins et optimisent les services avant qu'ils ne soient exprimés."
+                />
+              </RevealOnScroll>
+              <RevealOnScroll client:visible delay={400} className="h-full">
+                <PhilosophyCard
+                  icon="monitoring"
+                  title="Pilotage par la Donnée"
+                  description="Une analyse en temps réel via nos KPI propriétaires pour une optimisation continue de la performance et de l'environnement de travail."
+                />
+              </RevealOnScroll>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= EXPERTISE SECTION ================= -->
+        <section id="expertise" class="relative pt-32 pb-48 bg-background-dark z-20">
+          <!-- Seamless Light Effect (Left Side) - Extends into next section -->
+          <div class="absolute -bottom-64 -left-40 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
+
+          <div class="container mx-auto px-6 max-w-[1400px] relative z-10">
+            <div class="flex flex-col md:flex-row gap-20">
+              <div class="md:w-1/3">
+                <RevealOnScroll client:visible>
+                  <h2 class="text-primary text-h2 font-serif  mb-8">Notre Savoir-Faire</h2>
+                  <p class="text-text-body text-body font-light mb-12 leading-relaxed font-body">
+                    Une orchestration minutieuse de chaque service pour garantir sérénité et fluidité au sein de vos installations.
+                  </p>
+                  <a class="inline-flex items-center text-primary hover:text-white transition-colors text-sm font-light uppercase tracking-widest gap-4 font-body border-b border-primary/30 pb-2 hover:border-white" href="#">
+                    Découvrir nos services
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                  </a>
+                </RevealOnScroll>
+              </div>
+              <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                <RevealOnScroll client:visible delay={100}>
+                  <ExpertiseItem
+                    number="01"
+                    title="L'Art de l'Accueil"
+                    description="Une réception digne des grands palaces, où chaque visiteur est un hôte privilégié accueilli avec raffinement."
+                  />
+                </RevealOnScroll>
+                <RevealOnScroll client:visible delay={200}>
+                  <ExpertiseItem
+                    number="02"
+                    title="Maintenance Prédictive"
+                    description="Une gestion technique invisible et proactive, garantissant la continuité absolue et sans faille de vos opérations."
+                  />
+                </RevealOnScroll>
+                <RevealOnScroll client:visible delay={300}>
+                  <ExpertiseItem
+                    number="03"
+                    title="Sûreté & Sérénité"
+                    description="Une vigilance constante et une protection discrète des biens et des personnes, assurant la tranquillité sans entrave."
+                  />
+                </RevealOnScroll>
+                <RevealOnScroll client:visible delay={400}>
+                  <ExpertiseItem
+                    number="04"
+                    title="Hospitalité & Événementiel"
+                    description="La création de moments d'exception et la coordination d'événements, orchestrées avec précision pour vos collaborateurs."
+                  />
+                </RevealOnScroll>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= TECHNOLOGY SECTION ================= -->
+        <section id="technologie" class="relative pt-12 pb-32 z-20">
+          <div class="container mx-auto px-6 max-w-[1400px] relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+              <div class="lg:w-1/2 order-2 lg:order-1">
+                <RevealOnScroll client:visible delay={200}>
+                  <div class="relative group perspective-1000">
+                    <img
+                      alt="Interface du tableau de bord sur tablette"
+                      class="relative z-10 w-full aspect-[4/3] object-cover filter grayscale-[20%] contrast-125 shadow-2xl transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYZaGJf89_R0wSBEM5jDiGPEHpDmOWCA_tiVrbcFtjlcFlQClE3Pe0nw1koqy_TPJzZ_Zy9glCENYsEihbGcZOWs0q9Rw2Ir-kyCvTseVHYgz2125bNLkMx0Qp5moOcibAe2RloYkU2r0E7paPZrZI-783ZEkFLqfp3ZvlDFfRvXDrYSAaYxzya57MFZgsZDIzV8tPBJFPyUmwRbvxyogXkFTNnRzGsX8biiToMhjMultbkTZnA39n-kwyZFruE45JK7RxAJIL9I0"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 pointer-events-none"></div>
+                  </div>
+                </RevealOnScroll>
+              </div>
+              <div class="lg:w-1/2 order-1 lg:order-2">
+                <RevealOnScroll client:visible>
+                  <div class="border-l border-primary pl-8 relative">
+                    <div class="absolute left-[-1px] top-0 h-16 w-[2px] bg-primary shadow-[0_0_10px_rgba(244,176,131,0.5)]"></div>
+                    <span class="text-primary text-xs font-light tracking-[0.2em] uppercase mb-4 block font-body">Innovation UFM</span>
+                    <h2 class="text-text-main text-h2 font-serif  mb-8">Le Concierge Digital 360°</h2>
+                    <p class="text-text-body text-body font-light mb-10 leading-relaxed font-body">
+                      Notre application propriétaire fusionne intelligence artificielle générative et interaction temps réel. Une interface intuitive qui connecte chaque occupant à son environnement.
+                    </p>
+                    <ul class="flex flex-col gap-6 mb-10">
+                      <li class="flex items-start gap-4">
+                        <span class="w-1.5 h-1.5 bg-primary mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(244,176,131,0.8)]"></span>
+                        <span class="text-text-body font-light text-lg font-body">Expérience personnalisée (Exécutif, Collaborateur, Visiteur)</span>
+                      </li>
+                      <li class="flex items-start gap-4">
+                        <span class="w-1.5 h-1.5 bg-primary mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(244,176,131,0.8)]"></span>
+                        <span class="text-text-body font-light text-lg font-body">Anticipation des besoins par analyse prédictive</span>
+                      </li>
+                      <li class="flex items-start gap-4">
+                        <span class="w-1.5 h-1.5 bg-primary mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(244,176,131,0.8)]"></span>
+                        <span class="text-text-body font-light text-lg font-body">Interaction instantanée pour une réactivité totale</span>
+                      </li>
+                    </ul>
+                  </div>
+                </RevealOnScroll>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SIGNATURE SECTION ================= -->
+        <section class="relative py-40 z-20 bg-background-dark">
+          <div class="container mx-auto px-6 max-w-4xl text-center relative">
+            <RevealOnScroll client:visible>
+              <h2 class="text-text-main text-2xl md:text-4xl font-serif italic leading-relaxed tracking-wide">
+                <span class="text-primary text-4xl md:text-6xl align-top mr-3 opacity-80">"</span>
+                L'excellence ne se décrète pas, elle s'orchestre. Le véritable luxe réside dans l'art d'anticiper les désirs inexprimés et de transformer le quotidien en une expérience fluide et invisible.
+                <span class="text-primary text-4xl md:text-6xl align-bottom ml-3 opacity-80">"</span>
+              </h2>
+            </RevealOnScroll>
+
+            <RevealOnScroll client:visible delay={200}>
+              <div class="mt-12 flex items-center justify-center gap-6">
+                <div class="h-px w-20 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                <span class="text-primary text-sm uppercase tracking-[0.2em] font-body font-light ">L'Exigence Praesio</span>
+                <div class="h-px w-20 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </section>
+      </div>
+    </main>
+    <Footer client:load />
+  </div>
+</MainLayout>
+
+<script>
+  // Handle hash navigation
+  if (window.location.hash) {
+    const element = document.getElementById(window.location.hash.replace('#', ''));
+    if (element) {
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+  }
+</script>
