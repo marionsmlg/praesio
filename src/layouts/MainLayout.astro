@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import MouseGlow from '../components/MouseGlow';
 
 interface Props {
   title?: string;
@@ -90,6 +91,7 @@ const fullImage = new URL(image, siteUrl).href;
   </script>
 </head>
 <body class="bg-background-dark text-text-body font-body font-light antialiased overflow-x-hidden selection:bg-primary selection:text-background-dark">
+  <MouseGlow client:load />
   <slot />
 </body>
 </html>
