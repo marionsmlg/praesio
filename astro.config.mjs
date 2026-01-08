@@ -17,6 +17,8 @@ export default defineConfig({
       customPages: [
         'https://praesio.com/',
         'https://praesio.com/contact',
+        'https://praesio.com/mentions-legales',
+        'https://praesio.com/politique-confidentialite',
       ]
     })
   ]

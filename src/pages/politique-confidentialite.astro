@@ -1,0 +1,225 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+---
+
+<MainLayout
+  title="Politique de Confidentialité - Praesio | Protection des Données"
+  description="Politique de confidentialité de Praesio - Comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD."
+  canonical="/politique-confidentialite"
+>
+  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden bg-background-dark">
+    <Header client:load />
+    <main class="flex-grow flex flex-col">
+      <div class="pt-32 lg:pt-48 pb-24 px-6 lg:px-20 w-full min-h-screen flex flex-col">
+        <div class="max-w-[1200px] mx-auto w-full">
+          <div class="space-y-8 mb-16">
+            <span class="text-primary text-xs tracking-[0.2em] uppercase font-light pl-4 font-body border-l-2 border-primary">Protection des données</span>
+            <h1 class="text-h1 text-text-main font-serif leading-[1.1]">
+              Politique de <br /> <span class="text-primary italic">Confidentialité</span>
+            </h1>
+          </div>
+
+          <div class="prose prose-invert max-w-none">
+            <!-- Introduction -->
+            <section class="mb-16 bg-surface-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Introduction</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>
+                  BCRI HOLDING, opérant sous la marque Praesio, accorde une grande importance à la protection de vos données personnelles. Cette politique de confidentialité vous informe sur la manière dont nous collectons, utilisons et protégeons vos données.
+                </p>
+                <p>
+                  Cette politique s'applique à tous les services proposés par Praesio et est conforme au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.
+                </p>
+              </div>
+            </section>
+
+            <!-- Responsable du traitement -->
+            <section class="mb-16 bg-card-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Responsable du traitement des données</h2>
+              <div class="space-y-3 text-text-body font-light font-body leading-relaxed">
+                <p><strong class="text-text-main font-normal">Raison sociale :</strong> BCRI HOLDING</p>
+                <p><strong class="text-text-main font-normal">Adresse :</strong> 27 Rue Raffet, 75016 Paris, France</p>
+                <p><strong class="text-text-main font-normal">SIREN :</strong> 879230597</p>
+                <p><strong class="text-text-main font-normal">Email :</strong> <a href="mailto:contact@praesio.com" class="text-primary hover:text-white transition-colors">contact@praesio.com</a></p>
+                <p><strong class="text-text-main font-normal">Représentant légal :</strong> Benoit CROUZATIER, Président</p>
+              </div>
+            </section>
+
+            <!-- Données collectées -->
+            <section class="mb-16 bg-surface-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Données personnelles collectées</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>Nous collectons les données personnelles suivantes :</p>
+                <ul class="space-y-2 ml-6 list-disc">
+                  <li><strong class="text-text-main">Données d'identité :</strong> nom, prénom</li>
+                  <li><strong class="text-text-main">Données de contact :</strong> adresse email, numéro de téléphone</li>
+                  <li><strong class="text-text-main">Données professionnelles :</strong> entreprise, fonction</li>
+                  <li><strong class="text-text-main">Données de communication :</strong> contenu des messages envoyés via le formulaire de contact</li>
+                  <li><strong class="text-text-main">Données de connexion :</strong> adresse IP, type de navigateur, pages consultées</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Finalités -->
+            <section class="mb-16 bg-card-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Finalités du traitement</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>Vos données personnelles sont collectées pour les finalités suivantes :</p>
+                <ul class="space-y-2 ml-6 list-disc">
+                  <li>Répondre à vos demandes de contact et de renseignements</li>
+                  <li>Gérer la relation client et les contrats de prestation de services</li>
+                  <li>Améliorer nos services et l'expérience utilisateur</li>
+                  <li>Réaliser des statistiques et analyses</li>
+                  <li>Respecter nos obligations légales et réglementaires</li>
+                  <li>Prévenir la fraude et assurer la sécurité de nos systèmes</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Base légale -->
+            <section class="mb-16 bg-surface-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Base légale du traitement</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>Le traitement de vos données personnelles repose sur :</p>
+                <ul class="space-y-2 ml-6 list-disc">
+                  <li><strong class="text-text-main">Votre consentement :</strong> lorsque vous nous contactez via le formulaire</li>
+                  <li><strong class="text-text-main">L'exécution du contrat :</strong> pour la gestion de nos prestations de services</li>
+                  <li><strong class="text-text-main">L'intérêt légitime :</strong> pour améliorer nos services et assurer la sécurité</li>
+                  <li><strong class="text-text-main">Les obligations légales :</strong> pour respecter les obligations comptables et fiscales</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Destinataires -->
+            <section class="mb-16 bg-card-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Destinataires des données</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>Vos données personnelles sont destinées à :</p>
+                <ul class="space-y-2 ml-6 list-disc">
+                  <li>Les services internes de BCRI HOLDING habilités</li>
+                  <li>Nos prestataires techniques (hébergement, emailing, etc.)</li>
+                  <li>Les autorités légales sur demande</li>
+                </ul>
+                <p class="mt-4">
+                  Nous veillons à ce que nos prestataires respectent la confidentialité et la sécurité de vos données conformément au RGPD.
+                </p>
+              </div>
+            </section>
+
+            <!-- Conservation -->
+            <section class="mb-16 bg-surface-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Durée de conservation</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>Vos données personnelles sont conservées pendant :</p>
+                <ul class="space-y-2 ml-6 list-disc">
+                  <li><strong class="text-text-main">Demandes de contact :</strong> 3 ans à compter de la demande</li>
+                  <li><strong class="text-text-main">Contrats clients :</strong> durée du contrat + 5 ans (obligations légales)</li>
+                  <li><strong class="text-text-main">Données de connexion :</strong> 12 mois maximum</li>
+                </ul>
+                <p class="mt-4">
+                  À l'issue de ces délais, vos données sont supprimées ou anonymisées.
+                </p>
+              </div>
+            </section>
+
+            <!-- Droits -->
+            <section class="mb-16 bg-card-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Vos droits</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+                <ul class="space-y-2 ml-6 list-disc">
+                  <li><strong class="text-text-main">Droit d'accès :</strong> obtenir la confirmation que vos données sont traitées et accéder à ces données</li>
+                  <li><strong class="text-text-main">Droit de rectification :</strong> corriger vos données inexactes ou incomplètes</li>
+                  <li><strong class="text-text-main">Droit à l'effacement :</strong> supprimer vos données dans certains cas</li>
+                  <li><strong class="text-text-main">Droit à la limitation :</strong> limiter le traitement de vos données</li>
+                  <li><strong class="text-text-main">Droit d'opposition :</strong> vous opposer au traitement de vos données</li>
+                  <li><strong class="text-text-main">Droit à la portabilité :</strong> récupérer vos données dans un format structuré</li>
+                  <li><strong class="text-text-main">Droit de retirer votre consentement :</strong> à tout moment</li>
+                </ul>
+                <p class="mt-6">
+                  Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@praesio.com" class="text-primary hover:text-white transition-colors">contact@praesio.com</a>
+                </p>
+                <p>
+                  Vous disposez également du droit d'introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-white transition-colors">www.cnil.fr</a>).
+                </p>
+              </div>
+            </section>
+
+            <!-- Sécurité -->
+            <section class="mb-16 bg-surface-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Sécurité des données</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>
+                  Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour garantir la sécurité de vos données personnelles et les protéger contre toute destruction, perte, altération, divulgation ou accès non autorisé.
+                </p>
+                <p>
+                  Ces mesures incluent notamment le chiffrement des données, l'authentification sécurisée, la limitation des accès et la surveillance des systèmes.
+                </p>
+              </div>
+            </section>
+
+            <!-- Cookies -->
+            <section class="mb-16 bg-card-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Cookies et traceurs</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>
+                  <strong class="text-text-main">Ce site web n'utilise aucun cookie ou traceur.</strong>
+                </p>
+                <p>
+                  Nous avons fait le choix de ne pas utiliser de cookies, traceurs, analytics ou technologies similaires pour collecter des informations sur nos visiteurs.
+                </p>
+                <p>
+                  Votre navigation sur ce site est entièrement privée et anonyme. Aucune donnée de navigation n'est collectée, analysée ou partagée avec des tiers.
+                </p>
+                <p class="mt-4">
+                  Cette approche garantit votre confidentialité absolue lors de votre visite sur notre site.
+                </p>
+              </div>
+            </section>
+
+            <!-- Modifications -->
+            <section class="mb-16 bg-surface-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Modifications de la politique</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>
+                  Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page avec une nouvelle date de mise à jour.
+                </p>
+                <p>
+                  Nous vous encourageons à consulter régulièrement cette page pour rester informé de la manière dont nous protégeons vos données.
+                </p>
+              </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="mb-16 bg-card-dark p-10 border border-white/5">
+              <h2 class="text-2xl font-serif text-primary mb-6">Nous contacter</h2>
+              <div class="space-y-4 text-text-body font-light font-body leading-relaxed">
+                <p>
+                  Pour toute question relative à cette politique de confidentialité ou à la gestion de vos données personnelles, vous pouvez nous contacter :
+                </p>
+                <ul class="space-y-2 ml-6 list-disc">
+                  <li><strong class="text-text-main">Par email :</strong> <a href="mailto:contact@praesio.com" class="text-primary hover:text-white transition-colors">contact@praesio.com</a></li>
+                  <li><strong class="text-text-main">Par courrier :</strong> BCRI HOLDING - 27 Rue Raffet, 75016 Paris, France</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          <div class="mt-16 pt-8 border-t border-white/10">
+            <p class="text-text-body text-sm font-light font-body opacity-60">
+              Dernière mise à jour : Janvier 2026
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <Footer client:load />
+  </div>
+</MainLayout>
+
+<script>
+  // Scroll to top on page load
+  window.scrollTo(0, 0);
+</script>

@@ -69,12 +69,11 @@ const Footer: React.FC = () => {
         {/* Bottom Bar: Copyright & Legal */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-2">
           <p className="text-xs text-text-body font-light font-body opacity-50">
-            © {new Date().getFullYear()} Praesio Inc. Tous droits réservés.
+            © {new Date().getFullYear()} Praesio. Tous droits réservés.
           </p>
           <div className="flex gap-8 text-xs text-text-body font-light font-body opacity-50">
-            {/* <a className="hover:text-primary hover:opacity-100 transition-all" href="#">Politique de Confidentialité</a>
-            <a className="hover:text-primary hover:opacity-100 transition-all" href="#">Conditions d'Utilisation</a> */}
-            <a className="hover:text-primary hover:opacity-100 transition-all" href="#">Mentions Légales</a>
+            <a className="hover:text-primary hover:opacity-100 transition-all" href="/mentions-legales">Mentions Légales</a>
+            <a className="hover:text-primary hover:opacity-100 transition-all" href="/politique-confidentialite">Politique de Confidentialité</a>
           </div>
         </div>
       </div>
