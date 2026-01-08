@@ -41,7 +41,7 @@ const Header: React.FC = () => {
           onClick={() => window.scrollTo(0, 0)}
         >
           <img
-            src="https://raw.githubusercontent.com/pearlstudio-git/praesiohomepagemaquette/refs/heads/main/PraesioLogo.webp"
+            src="/images/PraesioLogo.webp"
             alt="Praesio"
             className="h-12 md:h-16 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
             loading="lazy"

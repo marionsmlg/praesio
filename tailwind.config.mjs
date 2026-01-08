@@ -21,8 +21,8 @@ export default {
       },
       fontSize: {
         'h1': ['60px', { lineHeight: '1.1', fontWeight: '500' }],
-        'h2': ['36px', { lineHeight: '1.2', letterSpacing: '0.05em', fontWeight: '700' }],
-        'h3': ['28px', { lineHeight: '1.3', fontWeight: '700' }],
+        'h2': ['36px', { lineHeight: '1.2', letterSpacing: '0.05em', fontWeight: '500' }],
+        'h3': ['28px', { lineHeight: '1.3', fontWeight: '500' }],
         'body': ['18px', { lineHeight: '1.6', fontWeight: '300' }],
       },
       animation: {

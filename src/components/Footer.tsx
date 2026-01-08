@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               onClick={() => window.scrollTo(0, 0)}
             >
               <img
-                src="https://raw.githubusercontent.com/pearlstudio-git/praesiohomepagemaquette/refs/heads/main/PraesioLogo.webp"
+                src="/images/PraesioLogo.webp"
                 alt="Praesio"
                 className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500"
                 loading="lazy"
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
 
           {/* Column 2: Locations (3 cols) */}
           <div className="lg:col-span-3 flex flex-col gap-8">
-            <h4 className="text-primary text-xs font-serif font-bold uppercase tracking-[0.2em]">Bureau</h4>
+            <h4 className="text-primary text-xs font-serif  uppercase tracking-[0.2em]">Bureau</h4>
             <div className="flex flex-col gap-8">
               <div>
                 <span className="block text-text-main text-sm font-light mb-2 font-body">Paris</span>
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
 
           {/* Column 3: Contact & Connect (4 cols) */}
           <div className="lg:col-span-4 flex flex-col gap-8">
-            <h4 className="text-primary text-xs font-serif font-bold uppercase tracking-[0.2em]">Nous Contacter</h4>
+            <h4 className="text-primary text-xs font-serif  uppercase tracking-[0.2em]">Nous Contacter</h4>
 
             <div className="flex flex-col gap-2">
               <a href="mailto:contact@praesio.com" className="text-xl text-text-main font-serif hover:text-primary transition-colors duration-300">
