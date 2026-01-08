@@ -22,7 +22,7 @@ const Header: React.FC = () => {
   const isActive = (path: string) => {
     if (typeof window === 'undefined') return false;
     if (path.startsWith('/#')) {
-      return (window.location.pathname + window.location.hash) === path;
+      return window.location.pathname === '/' && window.location.hash === path.substring(1);
     }
     return window.location.pathname === path;
   };

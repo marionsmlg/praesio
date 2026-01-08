@@ -7,7 +7,11 @@ import PhilosophyCard from '../components/PhilosophyCard';
 import ExpertiseItem from '../components/ExpertiseItem';
 ---
 
-<MainLayout>
+<MainLayout
+  title="Praesio - Gestion d'Installations de Luxe | Ultra Facility Management Paris"
+  description="Praesio combine l'hospitalité 5 étoiles et la technologie prédictive pour offrir des services de gestion d'installations haut de gamme. Excellence opérationnelle et innovation IA pour votre entreprise."
+  canonical="/"
+>
   <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden bg-background-dark">
     <Header client:load />
     <main class="flex-grow flex flex-col">
@@ -221,13 +225,43 @@ import ExpertiseItem from '../components/ExpertiseItem';
 </MainLayout>
 
 <script>
-  // Handle hash navigation
-  if (window.location.hash) {
-    const element = document.getElementById(window.location.hash.replace('#', ''));
+  // Fonction pour scroller avec offset pour le header fixe
+  function scrollToSection(targetId: string) {
+    const element = document.getElementById(targetId);
     if (element) {
-      setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
+      const headerOffset = 120; // Hauteur du header fixe + marge
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
+
+  // Handle hash navigation au chargement de la page
+  if (window.location.hash) {
+    const targetId = window.location.hash.replace('#', '');
+    setTimeout(() => {
+      scrollToSection(targetId);
+    }, 100);
+  }
+
+  // Handle les clics sur les liens de navigation
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const link = target.closest('a[href^="/#"]');
+
+    if (link) {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('/#')) {
+        e.preventDefault();
+        const targetId = href.replace('/#', '');
+        scrollToSection(targetId);
+        // Mettre à jour l'URL sans recharger la page
+        history.pushState(null, '', href);
+      }
+    }
+  });
 </script>

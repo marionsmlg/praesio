@@ -3,9 +3,21 @@ import '../styles/global.css';
 
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
 }
 
-const { title = 'Praesio - Luxury User Facility Management' } = Astro.props;
+const {
+  title = 'Praesio - Gestion d\'Installations de Luxe | Ultra Facility Management',
+  description = 'Praesio offre des services de gestion d\'installations haut de gamme combinant l\'hospitalité 5 étoiles et la technologie prédictive pour les plus grandes entreprises mondiales.',
+  image = '/images/PraesioLogo.webp',
+  canonical = Astro.url.pathname
+} = Astro.props;
+
+const siteUrl = 'https://praesio.com'; // Remplacer par votre URL réelle
+const fullCanonical = new URL(canonical, siteUrl).href;
+const fullImage = new URL(image, siteUrl).href;
 ---
 
 <!DOCTYPE html>
@@ -13,7 +25,35 @@ const { title = 'Praesio - Luxury User Facility Management' } = Astro.props;
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
   <title>{title}</title>
+  <meta name="title" content={title}>
+  <meta name="description" content={description}>
+  <meta name="keywords" content="facility management, gestion installations luxe, ultra facility management, hospitalité entreprise, maintenance prédictive, technologie IA, gestion immobilière haut de gamme, Paris">
+  <meta name="author" content="Praesio">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href={fullCanonical}>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={fullCanonical}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={fullImage}>
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Praesio">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content={fullCanonical}>
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={fullImage}>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="/images/PraesioLogo.webp">
+  <link rel="apple-touch-icon" href="/images/PraesioLogo.webp">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +63,31 @@ const { title = 'Praesio - Luxury User Facility Management' } = Astro.props;
   <!-- Material Symbols -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="/images/PraesioLogo.webp">
+  <!-- Structured Data -->
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Praesio",
+      "url": "https://praesio.com",
+      "logo": "https://praesio.com/images/PraesioLogo.webp",
+      "description": "Gestion d'installations haut de gamme pour les plus grandes entreprises mondiales",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "27 Rue Raffet",
+        "addressLocality": "Paris",
+        "postalCode": "75016",
+        "addressCountry": "FR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@praesio.com",
+        "contactType": "Service Client",
+        "availableLanguage": ["fr", "en"]
+      },
+      "sameAs": []
+    }
+  </script>
 </head>
 <body class="bg-background-dark text-text-body font-body font-light antialiased overflow-x-hidden selection:bg-primary selection:text-background-dark">
   <slot />
