@@ -1,10 +1,10 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import RevealOnScroll from '../components/RevealOnScroll';
-import PhilosophyCard from '../components/PhilosophyCard';
-import ExpertiseItem from '../components/ExpertiseItem';
+import MainLayout from "../layouts/MainLayout.astro";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import RevealOnScroll from "../components/RevealOnScroll";
+import PhilosophyCard from "../components/PhilosophyCard";
+import ExpertiseItem from "../components/ExpertiseItem";
 ---
 
 <MainLayout
@@ -12,15 +12,21 @@ import ExpertiseItem from '../components/ExpertiseItem';
   description="Praesio combine l'hospitalité 5 étoiles et la technologie prédictive pour offrir des services de gestion d'installations haut de gamme. Excellence opérationnelle et innovation IA pour votre entreprise."
   canonical="/"
 >
-  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden bg-background-dark">
+  <div
+    class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden bg-background-dark"
+  >
     <Header client:load />
     <main class="flex-grow flex flex-col">
       <div class="flex flex-col bg-background-dark">
-
         <!-- ================= HERO SECTION ================= -->
-        <section class="relative min-h-screen flex items-center justify-center bg-background-dark pt-24 md:pt-20 pb-16 md:pb-0 z-10">
+        <section
+          class="relative min-h-screen flex items-center justify-center bg-background-dark pt-24 md:pt-20 pb-16 md:pb-0 z-10"
+        >
           <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-background-dark/70 md:bg-background-dark/60 z-10"></div>
+            <div
+              class="absolute inset-0 bg-background-dark/70 md:bg-background-dark/60 z-10"
+            >
+            </div>
             <img
               alt="Hall d'entrée d'entreprise de luxe"
               class="w-full h-full object-cover object-center"
@@ -29,20 +35,38 @@ import ExpertiseItem from '../components/ExpertiseItem';
           </div>
 
           <!-- Seamless Transition Gradient: Fades to background-dark (#020617) -->
-          <div class="absolute bottom-0 left-0 w-full h-32 md:h-64 bg-gradient-to-b from-transparent via-background-dark/60 to-background-dark z-10 pointer-events-none"></div>
+          <div
+            class="absolute bottom-0 left-0 w-full h-32 md:h-64 bg-gradient-to-b from-transparent via-background-dark/60 to-background-dark z-10 pointer-events-none"
+          >
+          </div>
 
-          <div class="relative z-20 container mx-auto px-4 sm:px-6 text-center max-w-5xl py-8 md:py-16">
+          <div
+            class="relative z-20 container mx-auto px-4 sm:px-6 text-center max-w-5xl py-8 md:py-16"
+          >
             <RevealOnScroll client:visible>
               <div class="flex flex-col gap-4 md:gap-6 items-center">
-                <span class="text-primary text-xs sm:text-sm font-light tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-2 font-body border-b border-primary pb-2 sm:pb-3 px-2">Ultra Facility Management</span>
-                <h1 class="text-text-main text-3xl sm:text-4xl md:text-5xl lg:text-h1 font-serif leading-tight tracking-tight px-4">
+                <span
+                  class="text-primary text-xs sm:text-sm font-light tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-2 font-body border-b border-primary pb-2 sm:pb-3 px-2"
+                  >Ultra Facility Management</span
+                >
+                <h1
+                  class="text-text-main text-3xl sm:text-4xl md:text-5xl lg:text-h1 font-serif leading-tight tracking-tight px-4"
+                >
                   L'Alliance de l'Hospitalité et de la Technologie
                 </h1>
-                <p class="text-text-main text-base sm:text-lg md:text-body font-light max-w-3xl leading-relaxed font-body px-4">
-                  La rencontre de l'hospitalité 5 étoiles et de la technologie prédictive. Nous orchestrons votre environnement de travail avec une élégance invisible et une anticipation absolue.
+                <p
+                  class="text-text-main text-base sm:text-lg md:text-body font-light max-w-3xl leading-relaxed font-body px-4"
+                >
+                  Nous orchestrons votre environnement de travail avec une
+                  élégance invisible et une anticipation absolue.
                 </p>
-                <div class="flex flex-wrap gap-4 mt-4 md:mt-8 justify-center px-4">
-                  <a href="/contact" class="w-full sm:w-auto sm:min-w-[200px] flex items-center justify-center h-12 sm:h-14 px-8 sm:px-10 bg-primary text-background-dark text-sm sm:text-base font-light tracking-wide hover:bg-white transition-colors duration-300 font-body rounded-none">
+                <div
+                  class="flex flex-wrap gap-4 mt-4 md:mt-8 justify-center px-4"
+                >
+                  <a
+                    href="/contact"
+                    class="w-full sm:w-auto sm:min-w-[200px] flex items-center justify-center h-12 sm:h-14 px-8 sm:px-10 bg-primary text-background-dark text-sm sm:text-base font-light tracking-wide hover:bg-white transition-colors duration-300 font-body rounded-none"
+                  >
                     Contactez-nous
                   </a>
                 </div>
@@ -51,30 +75,54 @@ import ExpertiseItem from '../components/ExpertiseItem';
           </div>
 
           <!-- Scroll Indicator -->
-          <div class="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 animate-fade-in z-30">
-            <div class="flex flex-col items-center gap-4 text-primary animate-float">
-              <span class="text-xs uppercase tracking-widest font-body font-light">Défiler</span>
-              <div class="h-12 w-px bg-gradient-to-b from-primary to-transparent"></div>
+          <div
+            class="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 animate-fade-in z-30"
+          >
+            <div
+              class="flex flex-col items-center gap-4 text-primary animate-float"
+            >
+              <span
+                class="text-xs uppercase tracking-widest font-body font-light"
+                >Défiler</span
+              >
+              <div
+                class="h-12 w-px bg-gradient-to-b from-primary to-transparent"
+              >
+              </div>
             </div>
           </div>
         </section>
 
         <!-- ================= VISION SECTION ================= -->
-        <section id="vision" class="relative py-20 md:py-40 bg-background-dark z-20">
+        <section
+          id="vision"
+          class="relative py-20 md:py-40 bg-background-dark z-20"
+        >
           <!-- Ambient Glow for Depth -->
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-3/4 bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
+          <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-3/4 bg-primary/5 blur-[150px] rounded-full pointer-events-none"
+          >
+          </div>
 
           <div class="container mx-auto px-6 relative z-10">
             <RevealOnScroll client:visible>
               <div class="flex flex-col items-center mb-24 text-center">
-                <h2 class="text-text-main text-h2 font-serif  mb-6">Un Environnement d'Exception</h2>
-                <p class="text-text-body text-body font-light max-w-2xl leading-relaxed font-body">
-                  Nous transformons le lieu de travail en un espace où la performance s'allie à l'émotion. Une expérience inspirée des plus grands hôtels, appliquée avec rigueur à l'entreprise.
+                <h2 class="text-text-main text-h2 font-serif mb-6">
+                  Un Environnement d'Exception
+                </h2>
+                <p
+                  class="text-text-body text-body font-light max-w-2xl leading-relaxed font-body"
+                >
+                  Nous transformons le lieu de travail en un espace où la
+                  performance s'allie à l'émotion. Une expérience inspirée des
+                  plus grands hôtels, appliquée avec rigueur à l'entreprise.
                 </p>
               </div>
             </RevealOnScroll>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-[1400px] mx-auto">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-[1400px] mx-auto"
+            >
               <RevealOnScroll client:visible delay={0} className="h-full">
                 <PhilosophyCard
                   icon="diversity_1"
@@ -101,17 +149,28 @@ import ExpertiseItem from '../components/ExpertiseItem';
         </section>
 
         <!-- ================= EXPERTISE SECTION ================= -->
-        <section id="expertise" class="relative py-20 md:py-40 bg-background-dark z-20">
+        <section
+          id="expertise"
+          class="relative py-20 md:py-40 bg-background-dark z-20"
+        >
           <!-- Seamless Light Effect (Left Side) - Extends into next section -->
-          <div class="absolute -bottom-64 -left-40 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
+          <div
+            class="absolute -bottom-64 -left-40 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none z-0"
+          >
+          </div>
 
           <div class="container mx-auto px-6 max-w-[1400px] relative z-10">
             <div class="flex flex-col md:flex-row gap-20">
               <div class="md:w-1/3">
                 <RevealOnScroll client:visible>
-                  <h2 class="text-primary text-h2 font-serif mb-8">Notre Savoir-Faire</h2>
-                  <p class="text-text-body text-body font-light mb-12 leading-relaxed font-body">
-                    Une orchestration minutieuse de chaque service pour garantir sérénité et fluidité au sein de vos installations.
+                  <h2 class="text-primary text-h2 font-serif mb-8">
+                    Notre Savoir-Faire
+                  </h2>
+                  <p
+                    class="text-text-body text-body font-light mb-12 leading-relaxed font-body"
+                  >
+                    Une orchestration minutieuse de chaque service pour garantir
+                    sérénité et fluidité au sein de vos installations.
                   </p>
                   <!-- <a class="inline-flex items-center text-primary hover:text-white transition-colors text-sm font-light uppercase tracking-widest gap-4 font-body border-b border-primary/30 pb-2 hover:border-white" href="#">
                     Découvrir nos services
@@ -119,7 +178,9 @@ import ExpertiseItem from '../components/ExpertiseItem';
                   </a> -->
                 </RevealOnScroll>
               </div>
-              <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+              <div
+                class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12"
+              >
                 <RevealOnScroll client:visible delay={100}>
                   <ExpertiseItem
                     number="01"
@@ -165,30 +226,59 @@ import ExpertiseItem from '../components/ExpertiseItem';
                       class="relative z-10 w-full aspect-[4/3] object-cover filter grayscale-[20%] contrast-125 shadow-2xl transition-transform duration-700 ease-out group-hover:scale-[1.01]"
                       src="/images/ULM.webp"
                     />
-                    <div class="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 pointer-events-none"></div>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 pointer-events-none"
+                    >
+                    </div>
                   </div>
                 </RevealOnScroll>
               </div>
               <div class="lg:w-1/2 order-1 lg:order-2">
                 <RevealOnScroll client:visible>
                   <div class="border-l border-primary pl-8 relative">
-                    <span class="text-primary text-xs font-light tracking-[0.2em] uppercase mb-4 block font-body">Innovation UFM</span>
-                    <h2 class="text-text-main text-h2 font-serif  mb-8">La Conciergerie Digitale 360°</h2>
-                    <p class="text-text-body text-body font-light mb-10 leading-relaxed font-body">
-                      Notre application propriétaire fusionne intelligence artificielle générative et interaction temps réel. Une interface intuitive qui connecte chaque occupant à son environnement.
+                    <span
+                      class="text-primary text-xs font-light tracking-[0.2em] uppercase mb-4 block font-body"
+                      >Innovation UFM</span
+                    >
+                    <h2 class="text-text-main text-h2 font-serif mb-8">
+                      La Conciergerie Digitale 360°
+                    </h2>
+                    <p
+                      class="text-text-body text-body font-light mb-10 leading-relaxed font-body"
+                    >
+                      Notre application propriétaire fusionne intelligence
+                      artificielle générative et interaction temps réel. Une
+                      interface intuitive qui connecte chaque occupant à son
+                      environnement.
                     </p>
                     <ul class="flex flex-col gap-6 mb-10">
                       <li class="flex items-start gap-4">
-                        <span class="w-1.5 h-1.5 bg-primary mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(244,176,131,0.8)]"></span>
-                        <span class="text-text-body font-light text-lg font-body">Expérience personnalisée (Exécutif, Collaborateur, Visiteur)</span>
+                        <span
+                          class="w-1.5 h-1.5 bg-primary mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(244,176,131,0.8)]"
+                        ></span>
+                        <span
+                          class="text-text-body font-light text-lg font-body"
+                          >Expérience personnalisée (Exécutif, Collaborateur,
+                          Visiteur)</span
+                        >
                       </li>
                       <li class="flex items-start gap-4">
-                        <span class="w-1.5 h-1.5 bg-primary mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(244,176,131,0.8)]"></span>
-                        <span class="text-text-body font-light text-lg font-body">Anticipation des besoins par analyse prédictive</span>
+                        <span
+                          class="w-1.5 h-1.5 bg-primary mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(244,176,131,0.8)]"
+                        ></span>
+                        <span
+                          class="text-text-body font-light text-lg font-body"
+                          >Anticipation des besoins par analyse prédictive</span
+                        >
                       </li>
                       <li class="flex items-start gap-4">
-                        <span class="w-1.5 h-1.5 bg-primary mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(244,176,131,0.8)]"></span>
-                        <span class="text-text-body font-light text-lg font-body">Interaction instantanée pour une réactivité totale</span>
+                        <span
+                          class="w-1.5 h-1.5 bg-primary mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(244,176,131,0.8)]"
+                        ></span>
+                        <span
+                          class="text-text-body font-light text-lg font-body"
+                          >Interaction instantanée pour une réactivité totale</span
+                        >
                       </li>
                     </ul>
                   </div>
@@ -202,18 +292,37 @@ import ExpertiseItem from '../components/ExpertiseItem';
         <section class="relative py-20 md:py-40 z-20 bg-background-dark">
           <div class="container mx-auto px-6 max-w-4xl text-center relative">
             <RevealOnScroll client:visible>
-              <h2 class="text-text-main text-2xl md:text-4xl font-serif italic leading-relaxed tracking-wide">
-                <span class="text-primary text-4xl md:text-6xl align-top mr-3 opacity-80">"</span>
-                L'excellence ne se décrète pas, elle s'orchestre. Le véritable luxe réside dans l'art d'anticiper les désirs inexprimés et de transformer le quotidien en une expérience fluide et invisible.
-                <span class="text-primary text-4xl md:text-6xl align-bottom ml-3 opacity-80">"</span>
+              <h2
+                class="text-text-main text-2xl md:text-4xl font-serif italic leading-relaxed tracking-wide"
+              >
+                <span
+                  class="text-primary text-4xl md:text-6xl align-top mr-3 opacity-80"
+                  >"</span
+                >
+                L'excellence ne se décrète pas, elle s'orchestre. Le véritable luxe
+                réside dans l'art d'anticiper les désirs inexprimés et de transformer
+                le quotidien en une expérience fluide et invisible.
+                <span
+                  class="text-primary text-4xl md:text-6xl align-bottom ml-3 opacity-80"
+                  >"</span
+                >
               </h2>
             </RevealOnScroll>
 
             <RevealOnScroll client:visible delay={200}>
               <div class="mt-12 flex items-center justify-center gap-6">
-                <div class="h-px w-20 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-                <span class="text-primary text-sm uppercase tracking-[0.2em] font-body font-light ">L'Exigence Praesio</span>
-                <div class="h-px w-20 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                <div
+                  class="h-px w-20 bg-gradient-to-r from-transparent via-primary to-transparent"
+                >
+                </div>
+                <span
+                  class="text-primary text-sm uppercase tracking-[0.2em] font-body font-light"
+                  >L'Exigence Praesio</span
+                >
+                <div
+                  class="h-px w-20 bg-gradient-to-r from-transparent via-primary to-transparent"
+                >
+                </div>
               </div>
             </RevealOnScroll>
           </div>
@@ -231,36 +340,37 @@ import ExpertiseItem from '../components/ExpertiseItem';
     if (element) {
       const headerOffset = 120; // Hauteur du header fixe + marge
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   }
 
   // Handle hash navigation au chargement de la page
   if (window.location.hash) {
-    const targetId = window.location.hash.replace('#', '');
+    const targetId = window.location.hash.replace("#", "");
     setTimeout(() => {
       scrollToSection(targetId);
     }, 100);
   }
 
   // Handle les clics sur les liens de navigation
-  document.addEventListener('click', (e) => {
+  document.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
     const link = target.closest('a[href^="/#"]');
 
     if (link) {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('/#')) {
+      const href = link.getAttribute("href");
+      if (href && href.startsWith("/#")) {
         e.preventDefault();
-        const targetId = href.replace('/#', '');
+        const targetId = href.replace("/#", "");
         scrollToSection(targetId);
         // Mettre à jour l'URL sans recharger la page
-        history.pushState(null, '', href);
+        history.pushState(null, "", href);
       }
     }
   });
