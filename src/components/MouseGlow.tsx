@@ -9,7 +9,7 @@ export const MouseGlow: React.FC = () => {
         // Using radial gradient to simulate a flashlight/glow effect
         // 600px size for a smooth, large fallout
         // Increased opacity (0.12) for more visibility
-        divRef.current.style.background = `radial-gradient(300px circle at ${e.clientX}px ${e.clientY}px, rgba(192, 138, 75, 0.12), transparent 40%)`;
+        divRef.current.style.background = `radial-gradient(200px circle at ${e.clientX}px ${e.clientY}px, rgba(192, 138, 75, 0.10), transparent 40%)`;
       }
     };
 
@@ -26,7 +26,7 @@ export const MouseGlow: React.FC = () => {
       className="pointer-events-none fixed inset-0 z-40 transition-opacity duration-300 mix-blend-screen"
       aria-hidden="true"
       style={{
-        background: `radial-gradient(300px circle at 50% 50%, rgba(192, 138, 75, 0.12), transparent 40%)`
+        background: `radial-gradient(200px circle at 50% 50%, rgba(192, 138, 75, 0.10), transparent 40%)`
       }}
     />
   );
