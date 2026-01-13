@@ -22,39 +22,61 @@ export async function handler(event: any) {
       };
     }
 
-    // Create HTML email template
+    // Create HTML email template with Praesio brand colors
     const html = `
-      <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #1E293B; max-width: 600px; margin: 0 auto;">
-        <div style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%); padding: 30px; text-align: center;">
-          <h1 style="color: white; margin: 0; font-size: 24px;">Nouveau message depuis Praesio</h1>
+      <div style="font-family: 'Roboto', Arial, sans-serif; line-height: 1.6; color: #E5E0DF; max-width: 600px; margin: 0 auto; background: #020617;">
+        <!-- Header with brand color -->
+        <div style="background: #0F172A; padding: 40px 30px; text-align: center; border-bottom: 3px solid #F4B083;">
+          <h1 style="color: #F4B083; margin: 0; font-size: 28px; font-weight: 400; letter-spacing: 0.05em;">PRAESIO</h1>
+          <p style="color: #E5E0DF; margin: 10px 0 0 0; font-size: 14px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase;">Nouveau message</p>
         </div>
 
-        <div style="background: #F8FAFC; padding: 30px; border: 1px solid #E2E8F0;">
-          <h2 style="color: #6366F1; margin-top: 0;">Sujet : ${subject}</h2>
-
-          <div style="margin: 20px 0; padding: 15px; background: white; border-left: 4px solid #6366F1;">
-            <p style="margin: 0 0 10px 0;"><strong style="color: #6366F1;">Nom :</strong> ${name}</p>
-            <p style="margin: 0;"><strong style="color: #6366F1;">Email :</strong> <a href="mailto:${email}" style="color: #4F46E5;">${email}</a></p>
+        <!-- Content -->
+        <div style="background: #0F172A; padding: 40px 30px;">
+          <!-- Subject -->
+          <div style="margin-bottom: 30px;">
+            <p style="color: #F4B083; margin: 0 0 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 300;">Sujet</p>
+            <h2 style="color: #F1F1F3; margin: 0; font-size: 22px; font-weight: 400; line-height: 1.3;">${subject}</h2>
           </div>
 
-          <div style="margin: 20px 0;">
-            <h3 style="color: #1E293B; margin-bottom: 10px;">Message :</h3>
-            <div style="background: white; padding: 20px; border-radius: 4px; border: 1px solid #E2E8F0;">
-              <p style="margin: 0; white-space: pre-wrap;">${message}</p>
+          <!-- Contact Info Card -->
+          <div style="margin: 30px 0; padding: 25px; background: #1E293B; border-left: 3px solid #F4B083;">
+            <div style="margin-bottom: 15px;">
+              <p style="color: #F4B083; margin: 0 0 5px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 300;">Nom complet</p>
+              <p style="color: #F1F1F3; margin: 0; font-size: 18px; font-weight: 300;">${name}</p>
+            </div>
+            <div>
+              <p style="color: #F4B083; margin: 0 0 5px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 300;">Email</p>
+              <p style="margin: 0;"><a href="mailto:${email}" style="color: #F4B083; text-decoration: none; font-size: 16px; font-weight: 300;">${email}</a></p>
             </div>
           </div>
 
-          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #E2E8F0; text-align: center; color: #64748B; font-size: 14px;">
-            <p style="margin: 0;">Ce message a été envoyé depuis le formulaire de contact de <strong>Praesio</strong></p>
+          <!-- Message -->
+          <div style="margin: 30px 0;">
+            <p style="color: #F4B083; margin: 0 0 15px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 300;">Message</p>
+            <div style="background: #1E293B; padding: 25px; border: 1px solid rgba(244, 176, 131, 0.1);">
+              <p style="color: #E5E0DF; margin: 0; font-size: 16px; font-weight: 300; line-height: 1.7; white-space: pre-wrap;">${message}</p>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div style="margin-top: 40px; padding-top: 25px; border-top: 1px solid rgba(244, 176, 131, 0.15); text-align: center;">
+            <p style="color: #E5E0DF; margin: 0; font-size: 13px; font-weight: 300; opacity: 0.7;">Ce message a été envoyé depuis le formulaire de contact de <strong style="color: #F4B083; font-weight: 400;">Praesio</strong></p>
+            <p style="color: #E5E0DF; margin: 8px 0 0 0; font-size: 12px; font-weight: 300; opacity: 0.5;">27 Rue Raffet, 75016 Paris</p>
           </div>
         </div>
       </div>
     `;
 
+    // Determine destination email based on environment
+    // In dev: use CONTACT_EMAIL from .env (your personal email)
+    // In prod: use contact@praesio.com from Netlify env var
+    const destinationEmail = process.env.CONTACT_EMAIL || "contact@praesio.com";
+
     // Send email via Resend
     await resend.emails.send({
       from: "Contact Praesio <onboarding@resend.dev>",
-      to: ["pearl.studio.contact@gmail.com"],
+      to: [destinationEmail],
       replyTo: email,
       subject: `Praesio - ${subject}`,
       html
