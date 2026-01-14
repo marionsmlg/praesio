@@ -52,9 +52,15 @@ const fullImage = new URL(image, siteUrl).href;
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={fullImage}>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/webp" href="/images/PraesioLogo.webp">
-  <link rel="apple-touch-icon" href="/images/PraesioLogo.webp">
+  <!-- Favicons adaptés au mode sombre/clair -->
+  <!-- En mode clair du navigateur: utiliser la favicon sombre -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-light-mode/favicon-32x32.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-light-mode/favicon-16x16.png" media="(prefers-color-scheme: light)">
+  <!-- En mode sombre du navigateur: utiliser la favicon claire -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-dark-mode/favicon-32x32.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-dark-mode/favicon-16x16.png" media="(prefers-color-scheme: dark)">
+  <link rel="shortcut icon" href="/favicon/favicon-dark-mode/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-light-mode/apple-touch-icon.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
