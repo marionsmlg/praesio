@@ -1,6 +1,6 @@
 ---
-import '../styles/global.css';
-import MouseGlow from '../components/MouseGlow';
+import "../styles/global.css";
+import MouseGlow from "../components/MouseGlow";
 
 interface Props {
   title?: string;
@@ -10,94 +10,118 @@ interface Props {
 }
 
 const {
-  title = 'Praesio - Gestion d\'Installations de Luxe | Ultra Facility Management',
-  description = 'Praesio offre des services de gestion d\'installations haut de gamme combinant l\'hospitalité 5 étoiles et la technologie prédictive pour les plus grandes entreprises mondiales.',
-  image = '/images/PraesioLogo.webp',
-  canonical = Astro.url.pathname
+  title = "Praesio - Gestion d'Installations de Luxe | Ultra Facility Management",
+  description = "Praesio offre des services de gestion d'installations haut de gamme combinant l'hospitalité 5 étoiles et la technologie prédictive pour les plus grandes entreprises mondiales.",
+  image = "/images/PraesioLogo.webp",
+  canonical = Astro.url.pathname,
 } = Astro.props;
 
-const siteUrl = 'https://praesio.com'; // Remplacer par votre URL réelle
+const siteUrl = "https://praesio.com"; // Remplacer par votre URL réelle
 const fullCanonical = new URL(canonical, siteUrl).href;
 const fullImage = new URL(image, siteUrl).href;
 ---
 
-<!DOCTYPE html>
-<html lang="fr" class="dark scroll-smooth">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary Meta Tags -->
-  <title>{title}</title>
-  <meta name="title" content={title}>
-  <meta name="description" content={description}>
-  <meta name="keywords" content="facility management, gestion installations luxe, ultra facility management, hospitalité entreprise, maintenance prédictive, technologie IA, gestion immobilière haut de gamme, Paris">
-  <meta name="author" content="Praesio">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href={fullCanonical}>
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="facility management, gestion installations luxe, ultra facility management, hospitalité entreprise, maintenance prédictive, technologie IA, gestion immobilière haut de gamme, Paris"
+    />
+    <meta name="author" content="Praesio" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={fullCanonical} />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content={fullCanonical}>
-  <meta property="og:title" content={title}>
-  <meta property="og:description" content={description}>
-  <meta property="og:image" content={fullImage}>
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:site_name" content="Praesio">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullCanonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImage} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Praesio" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content={fullCanonical}>
-  <meta name="twitter:title" content={title}>
-  <meta name="twitter:description" content={description}>
-  <meta name="twitter:image" content={fullImage}>
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={fullCanonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImage} />
 
-  <!-- Favicons adaptés au mode sombre/clair -->
-  <!-- En mode clair du navigateur: utiliser la favicon sombre -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-light-mode/favicon-32x32.png" media="(prefers-color-scheme: light)">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-light-mode/favicon-16x16.png" media="(prefers-color-scheme: light)">
-  <!-- En mode sombre du navigateur: utiliser la favicon claire -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-dark-mode/favicon-32x32.png" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-dark-mode/favicon-16x16.png" media="(prefers-color-scheme: dark)">
-  <link rel="shortcut icon" href="/favicon/favicon-dark-mode/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-light-mode/apple-touch-icon.png">
+    <!-- Favicons adaptés au mode sombre/clair -->
+    <!-- Favicon par défaut = mode clair -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-light-mode/favicon-32x32.png?v=3"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Favicon pour le mode sombre -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-dark-mode/favicon-32x32.png?v=3"
+      media="(prefers-color-scheme: dark)"
+    />
 
-  <!-- Material Symbols -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- iOS -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/favicon-light-mode/apple-touch-icon.png"
+    />
 
-  <!-- Structured Data -->
-  <script type="application/ld+json" is:inline>
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Praesio",
-      "url": "https://praesio.com",
-      "logo": "https://praesio.com/images/PraesioLogo.webp",
-      "description": "Gestion d'installations haut de gamme pour les plus grandes entreprises mondiales",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "27 Rue Raffet",
-        "addressLocality": "Paris",
-        "postalCode": "75016",
-        "addressCountry": "FR"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "contact@praesio.com",
-        "contactType": "Service Client",
-        "availableLanguage": ["fr", "en"]
-      },
-      "sameAs": []
-    }
-  </script>
-</head>
-<body class="bg-background-dark text-text-body font-body font-light antialiased overflow-x-hidden selection:bg-primary selection:text-background-dark">
-  <MouseGlow client:load />
-  <slot />
-</body>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Praesio",
+        "url": "https://praesio.com",
+        "logo": "https://praesio.com/images/PraesioLogo.webp",
+        "description": "Gestion d'installations haut de gamme pour les plus grandes entreprises mondiales",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 Rue Raffet",
+          "addressLocality": "Paris",
+          "postalCode": "75016",
+          "addressCountry": "FR"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact@praesio.com",
+          "contactType": "Service Client",
+          "availableLanguage": ["fr", "en"]
+        },
+        "sameAs": []
+      }
+    </script>
+  </head>
+  <body
+    class="bg-background-dark text-text-body font-body font-light antialiased overflow-x-hidden selection:bg-primary selection:text-background-dark"
+  >
+    <MouseGlow client:load />
+    <slot />
+  </body>
 </html>
