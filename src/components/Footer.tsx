@@ -56,14 +56,25 @@ const Footer: React.FC = () => {
                 +33 1 23 45 67 89
               </a> */}
 
-              <a
-                href="/book-praesio.pdf"
-                download="Book-Praesio.pdf"
-                className="inline-flex items-center gap-2 text-sm text-text-body hover:text-primary transition-colors duration-300 font-light mt-2 group"
-              >
-                <span className="material-symbols-outlined text-lg group-hover:translate-y-0.5 transition-transform">download</span>
-                Télécharger notre book
-              </a>
+              <div className="flex flex-col gap-2 mt-2">
+                <a
+                  href="/book-praesio.pdf"
+                  download="Book-Praesio.pdf"
+                  className="inline-flex items-center gap-2 text-sm text-text-body hover:text-primary transition-colors duration-300 font-light group"
+                >
+                  <span className="material-symbols-outlined text-lg group-hover:translate-y-0.5 transition-transform">download</span>
+                  Télécharger notre book
+                </a>
+                <a
+                  href="/book-praesio.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs text-text-body/60 hover:text-primary transition-colors duration-300 font-light"
+                >
+                  <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  Ouvrir dans un nouvel onglet
+                </a>
+              </div>
             </div>
 
             <div className="flex items-center gap-4 mt-4">
