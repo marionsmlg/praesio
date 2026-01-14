@@ -1,0 +1,15 @@
+# Configuration Netlify pour Praesio
+
+# Configuration des headers pour les fichiers PDF
+# Cela permet de forcer le téléchargement des PDF et d'améliorer la compatibilité
+[[headers]]
+  for = "/*.pdf"
+  [headers.values]
+    Content-Type = "application/pdf"
+    Content-Disposition = "attachment"
+    X-Content-Type-Options = "nosniff"
+
+# Configuration du build (à ajuster selon votre setup)
+[build]
+  publish = "dist"
+  command = "npm run build"
