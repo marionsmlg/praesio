@@ -1,6 +1,15 @@
-import { Resend } from "resend";
+import * as nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY!);
+// Configure SMTP transporter
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: parseInt(process.env.SMTP_PORT || "465"),
+  secure: true, // true for 465, false for other ports
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 
 export async function handler(event: any) {
   // Only allow POST requests
@@ -70,13 +79,13 @@ export async function handler(event: any) {
 
     // Determine destination email based on environment
     // In dev: use CONTACT_EMAIL from .env (your personal email)
-    // In prod: use contact@praesio.com from Netlify env var
-    const destinationEmail = process.env.CONTACT_EMAIL || "contact@praesio.com";
+    // In prod: use contact@pearl-agency.com from Netlify env var
+    const destinationEmail = process.env.CONTACT_EMAIL || process.env.SMTP_USER;
 
-    // Send email via Resend
-    await resend.emails.send({
-      from: "Contact Praesio <onboarding@resend.dev>",
-      to: [destinationEmail],
+    // Send email via Nodemailer with Private Email SMTP
+    await transporter.sendMail({
+      from: `"Contact Praesio" <${process.env.SMTP_USER}>`,
+      to: destinationEmail,
       replyTo: email,
       subject: `Praesio - ${subject}`,
       html
