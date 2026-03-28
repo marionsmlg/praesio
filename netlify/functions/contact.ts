@@ -1,15 +1,27 @@
-import * as nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-// Configure SMTP transporter
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || "465"),
-  secure: true, // true for 465, false for other ports
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+// ============================================================
+// ANCIENNE IMPLÉMENTATION : Nodemailer (SMTP via Private Email)
+// Décommentez ce bloc et commentez la section Resend ci-dessous
+// pour revenir à l'envoi via SMTP.
+// ============================================================
+// import * as nodemailer from "nodemailer";
+//
+// // Configure SMTP transporter
+// const transporter = nodemailer.createTransport({
+//   host: process.env.SMTP_HOST,
+//   port: parseInt(process.env.SMTP_PORT || "465"),
+//   secure: true, // true for 465, false for other ports
+//   auth: {
+//     user: process.env.SMTP_USER,
+//     pass: process.env.SMTP_PASS,
+//   },
+// });
+// ============================================================
+
+// NOUVELLE IMPLÉMENTATION : Resend
+// Stocker la clé API dans les variables d'environnement Netlify sous RESEND_API_KEY
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function handler(event: any) {
   // Only allow POST requests
@@ -79,12 +91,22 @@ export async function handler(event: any) {
 
     // Determine destination email based on environment
     // In dev: use CONTACT_EMAIL from .env (your personal email)
-    // In prod: use contact@pearl-agency.com from Netlify env var
-    const destinationEmail = process.env.CONTACT_EMAIL || process.env.SMTP_USER;
+    // In prod: use contact@praesio.fr from Netlify env var
+    const destinationEmail = process.env.CONTACT_EMAIL!;
 
-    // Send email via Nodemailer with Private Email SMTP
-    await transporter.sendMail({
-      from: `"Contact Praesio" <${process.env.SMTP_USER}>`,
+    // Send email via Resend
+    // Pour revenir à Nodemailer, remplacer ce bloc par :
+    // await transporter.sendMail({
+    //   from: `"Contact Praesio" <${process.env.SMTP_USER}>`,
+    //   to: destinationEmail,
+    //   replyTo: email,
+    //   subject: `Praesio - ${subject}`,
+    //   html
+    // });
+    await resend.emails.send({
+      from: process.env.NODE_ENV === "production"
+        ? "Contact Praesio <contact@praesio.com>"
+        : "Contact Praesio <onboarding@resend.dev>",
       to: destinationEmail,
       replyTo: email,
       subject: `Praesio - ${subject}`,
